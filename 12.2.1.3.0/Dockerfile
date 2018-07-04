@@ -20,7 +20,7 @@
 
 # Pull base image
 # ----------------------------------------------------------------------
-FROM oracle/serverjre:8
+FROM trivadisbds/serverjre:8
 
 # Maintainer
 # ----------------------------------------------------------------------
@@ -104,7 +104,7 @@ COPY *zip* install.rsp oraInst.loc "${DOWNLOAD}/"
 # Switch to user oracle, oracle software as to be installed with regular user
 # ----------------------------------------------------------------------
 USER oracle
-RUN "${DOCKER_SCRIPTS}/${INSTALL_SCRIPT}" ${FMW_OUD_PKG} ${FMW_PKG} ${WLS_PATCH} ${OUD_PATCH}
+RUN "${DOCKER_SCRIPTS}/${INSTALL_SCRIPT}" ${FMW_OUD_PKG} ${FMW_PKG} 
 
 # get the latest OUD base from GitHub and install it
 RUN "${DOCKER_SCRIPTS}/setup_oudbase.sh"
