@@ -20,7 +20,7 @@
 
 # Pull base image
 # ----------------------------------------------------------------------
-FROM trivadisbds/serverjre:8
+FROM oracle/serverjre:8
 
 # Maintainer
 # ----------------------------------------------------------------------
@@ -34,7 +34,7 @@ ARG ORAREPO
 
 # Environment variables required for this build (do NOT change)
 # ----------------------------------------------------------------------
-ENV ORAREPO=${ORAREPO:-"docker.oradba.ch"} \
+ENV ORAREPO=${ORAREPO:-orarepo} \
     DOWNLOAD="/tmp/download" \
     DOCKER_SCRIPTS="/opt/docker/bin" \
     START_SCRIPT="start_oudsm_domain.sh" \
@@ -50,7 +50,7 @@ ENV ORAREPO=${ORAREPO:-"docker.oradba.ch"} \
     FMW_OUD_PKG="p26270957_122130_Generic.zip" \
     FMW_PKG="p26269885_122130_Generic.zip" \
     WLS_PATCH="p27342434_122130_Generic.zip" \
-    OUD_PATCH="p27742743_122130_Generic.zip"
+    OUD_PATCH="p28245820_122130_Generic.zip"
 
 # Use second ENV so that variable get substituted
 ENV ORACLE_BASE=${ORACLE_BASE:-$ORACLE_ROOT/app/oracle} \
