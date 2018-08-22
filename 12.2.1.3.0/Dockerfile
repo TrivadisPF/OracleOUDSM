@@ -20,7 +20,7 @@
 
 # Pull base image
 # ----------------------------------------------------------------------
-FROM oracle/serverjre:8
+FROM trivadisbds/serverjre:8
 
 # Maintainer
 # ----------------------------------------------------------------------
@@ -33,8 +33,8 @@ ARG ORACLE_BASE
 ARG ORAREPO
 
 # Environment variables required for this build (do NOT change)
-# ----------------------------------------------------------------------
-ENV ORAREPO=${ORAREPO:-orarepo} \
+# -------------------------------------------------------------
+ENV ORAREPO=${ORAREPO:-"docker.oradba.ch"} \
     DOWNLOAD="/tmp/download" \
     DOCKER_SCRIPTS="/opt/docker/bin" \
     START_SCRIPT="start_oudsm_domain.sh" \
